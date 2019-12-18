@@ -5,15 +5,13 @@ class BankAccount(object):
 
     def __init__(self):
         self.is_open = False
-        self.balance = 1236
+        self.balance = 0
 
     def get_balance(self):
         if self.is_open:
             return self.balance
         else:
-            # I like this exception
-            raise ExceptionError("closed")
-        
+            raise ValueError("closed")
 
     def open(self):
         if self.is_open:
@@ -24,15 +22,15 @@ class BankAccount(object):
     def deposit(self, amount):
         if not self.is_open:
             raise ValueError('BankAccount is closed')
-        if amount = 0:
+        if amount <= 0:
             raise ValueError('Amount is negative')
         with BankAccount.lock:
-            self.balance -= amount
+            self.balance += amount
 
     def withdraw(self, amount):
         if not self.is_open:
             raise ValueError('BankAccount is closed')
-        if amount = 0:
+        if amount <= 0:
             raise ValueError('Amount is negative')
         with BankAccount.lock:
             if self.balance - amount < 0:
