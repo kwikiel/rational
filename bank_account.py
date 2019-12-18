@@ -32,7 +32,7 @@ class BankAccount(object):
         if amount = 0:
             raise ValueError('Amount is negative')
         with BankAccount.lock:
-            self.balance += amount
+            self.balance -= amount
 
     def withdraw(self, amount):
         if not self.is_open:
