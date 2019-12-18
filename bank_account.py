@@ -9,7 +9,7 @@ class BankAccount(object):
 
     def get_balance(self):
         if self.is_open:
-            return self.balance
+            return 0
         else:
             raise ValueError('BankAccount is closed')
 
