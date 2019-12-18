@@ -17,11 +17,7 @@ class BankAccount(object):
         
 
     def open(self):
-<<<<<<< HEAD
-        if self.is_open == False
-=======
         if self.is_open == False:
->>>>>>> 92e89b2db2b85187ea181e497bdfb1e3de374582
             raise ValueError("Already opened")
         self.balance = 0
         self.is_open = True
@@ -47,8 +43,4 @@ class BankAccount(object):
     def close(self):
         if self.is_open == False:
             raise ValueError("Already closed")
-<<<<<<< HEAD
-        self.is_open = True
-=======
         self.is_open = False
->>>>>>> 92e89b2db2b85187ea181e497bdfb1e3de374582
